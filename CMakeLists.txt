@@ -43,8 +43,9 @@ if (NOT IPS2RA_DISABLE_PARALLEL)
   find_package (Threads REQUIRED)
   target_link_libraries(ips2ra INTERFACE Threads::Threads)
 
-  list(APPEND CMAKE_MODULE_PATH ${CMAKE_CURRENT_LIST_DIR}/extern/cmake-modules)
+  
   find_package(TBB REQUIRED)
+  list(APPEND CMAKE_MODULE_PATH ${CMAKE_CURRENT_LIST_DIR}/extern/cmake-modules)
   target_link_libraries(ips2ra INTERFACE TBB::tbb)
 
   target_link_libraries(ips2ra INTERFACE atomic)
